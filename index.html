@@ -236,8 +236,6 @@
     flex-shrink: 0; font-size: 12px; color: #fff; border-radius: 6px;
     padding: 2px 8px; background: var(--primary);
   }
-  .modal-option .tag.g2 { background: #16a34a; }
-  .modal-option .tag.g4 { background: #d97706; }
   .modal-option .tag.art { background: #7c3aed; }
   .modal-option .tag.custom { background:#9333ea; }
   .modal-option .tag.file { background: #6b7280; }
@@ -260,8 +258,6 @@
     font-weight: 700; margin-bottom: 8px;
   }
   .grade-head .tag { font-size: 12px; padding: 2px 8px; border-radius: 6px; color: #fff; }
-  .grade-head .tag.g2 { background: #16a34a; }
-  .grade-head .tag.g4 { background: #d97706; }
   .grade-head .tag.art { background: #7c3aed; }
   .grade-head .tag.custom {background:#9333ea;}
   .unit-grid {
@@ -307,7 +303,7 @@
     box-shadow: 0 12px 40px rgba(0,0,0,.18);
   }
   .vocab-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
-  .vocab-sub { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+  .vocab-sub { font-size:13px; color:#64748b; margin-bottom:12px; }
   .vocab-list { font-size:14px; line-height:1.8; }
   .vocab-list .row { padding:4px 0;border-bottom:1px dashed #e2e8f0; }
   .vocab-list .en { font-weight:600;color:#0f172a; }
@@ -338,28 +334,6 @@
   <div class="modal-box">
     <div class="modal-title">导入单词 / 短文</div>
     <div class="modal-sub">格式：英文 /音标/ 中文；也支持普通英文+中文；大段纯英文会自动分句</div>
-      <div class="grade-group">
-      <div class="grade-head"><span class="tag g2">二年级</span> 新交际英语</div>
-      <div class="unit-grid">
-        <button class="unit-btn" onclick="loadUnit('g2',1)">Unit 1</button>
-        <button class="unit-btn" onclick="loadUnit('g2',2)">Unit 2</button>
-        <button class="unit-btn" onclick="loadUnit('g2',3)">Unit 3</button>
-        <button class="unit-btn" onclick="loadUnit('g2',4)">Unit 4</button>
-        <button class="unit-btn" onclick="loadUnit('g2',5)">Unit 5</button>
-        <button class="unit-btn" onclick="loadUnit('g2',6)">Unit 6</button>
-      </div>
-    </div>
-    <div class="grade-group">
-      <div class="grade-head"><span class="tag g4">四年级</span> 新交际英语</div>
-      <div class="unit-grid">
-        <button class="unit-btn" onclick="loadUnit('g4',1)">Unit 1</button>
-        <button class="unit-btn" onclick="loadUnit('g4',2)">Unit 2</button>
-        <button class="unit-btn" onclick="loadUnit('g4',3)">Unit 3</button>
-        <button class="unit-btn" onclick="loadUnit('g4',4)">Unit 4</button>
-        <button class="unit-btn" onclick="loadUnit('g4',5)">Unit 5</button>
-        <button class="unit-btn" onclick="loadUnit('g4',6)">Unit 6</button>
-      </div>
-    </div>
     <div class="grade-group">
       <div class="grade-head"><span class="tag art">短文</span> 内置短文练习</div>
       <div class="unit-grid">
@@ -368,7 +342,20 @@
         <button class="unit-btn" onclick="loadArticle('ukWeather')">英国的天气</button>
         <button class="unit-btn" onclick="loadArticle('chore1')">做家务系列1</button>
         <button class="unit-btn" onclick="loadArticle('helpMomChore')">帮妈妈做家务</button>
-      </div>
+        <button class="unit-btn" onclick="loadArticle('pandatravel')">熊猫旅行</button>
+        <button class="unit-btn" onclick="loadArticle('unit21')">二年级一单元</button>
+        <button class="unit-btn" onclick="loadArticle('unit22')">二年级二单元</button>
+        <button class="unit-btn" onclick="loadArticle('unit23')">二年级三单元</button>
+        <button class="unit-btn" onclick="loadArticle('unit24')">二年级四单元</button>
+        <button class="unit-btn" onclick="loadArticle('unit25')">二年级五单元</button>
+        <button class="unit-btn" onclick="loadArticle('unit26')">二年级六单元</button>
+        <button class="unit-btn" onclick="loadArticle('unit41')">四年级一单元</button>
+        <button class="unit-btn" onclick="loadArticle('unit42')">四年级二单元</button>
+        <button class="unit-btn" onclick="loadArticle('unit43')">四年级三单元</button>
+        <button class="unit-btn" onclick="loadArticle('unit44')">四年级四单元</button>
+        <button class="unit-btn" onclick="loadArticle('unit45')">四年级五单元</button>
+        <button class="unit-btn" onclick="loadArticle('unit46')">四年级六单元</button>
+        </div>
     </div>
     <!-- 自定义粘贴文本分组 -->
     <div class="grade-group" id="custom-text-group">
@@ -376,7 +363,6 @@
       <div class="unit-grid" id="custom-text-grid">
       </div>
     </div>
-
     <button class="modal-option" onclick="closeImportModal(); loadFile('txt')">
       <span class="tag file">文件</span> 导入 .txt / .docx 文件
     </button>
@@ -415,7 +401,7 @@
     <div class="progress" id="progress">第 1 / 1 句</div>
     <div class="topbar-spacer"></div>
   </div>
-  <div class="hint">根据中文意思默写英文：空格切词，回车交卷；按 Ctrl+H 偷看整句</div>
+  <div class="hint">根据中文意思默写英文：空格切词，回车交卷；提交后直接按回车下一题；按 Ctrl+H 偷看整句</div>
   <div class="correct-bar" id="correct-bar"></div>
   <div class="zh-box" id="zh-box">正在翻译中文意思…</div>
   <div class="speak-bar">
@@ -451,12 +437,13 @@ let targetWords = [];
 let submitted = false;
 let autoTimer = null;
 let listenAutoTimer = null;
+let errTipTimer = null;
 const LISTEN_AUTO_SEC = 3000;
+const TRANSLATE_TIMEOUT = 8000;
 let currentMode = "listen";
 let shuffleOn = false;
 let readZhAfterEn = false;
 let showPhoneticOn = false;
-
 // ==========自定义文本本地存储模块==========
 const STORAGE_KEY = "english_custom_texts";
 function getCustomTexts(){
@@ -515,348 +502,15 @@ function renderCustomTextUI(){
     grid.appendChild(wrap);
   })
 }
-
 // 空兼容函数，旧代码调用不会报错
 function forceStopRecordIfNeed(){}
 const wordDict = {
   "feeling":"/ˈfiːlɪŋ/",
-"sad":"/sæd/",
-"angry":"/ˈæŋɡri/",
-"tired":"/ˈtaɪəd/",
-"hungry":"/ˈhʌŋɡri/",
-"fun":"/fʌn/",
-"show":"/ʃəʊ/",
-"turn":"/tɜːn/",
-"apple":"/ˈæpl/",
-"o'clock":"/əˈklɒk/",
-"want":"/wɒnt/",
-"for":"/fɔː(r)/",
-"dinner":"/ˈdɪnə(r)/",
-"yummy":"/ˈjʌmi/",
-"food":"/fuːd/",
-"eat":"/iːt/",
-"banana":"/bəˈnɑːnə/",
-"rice":"/raɪs/",
-"noodle":"/ˈnuːdl/",
-"milk":"/mɪlk/",
-"bread":"/bred/",
-"like":"/laɪk/",
-"but":"/bʌt/",
-"good":"/ɡʊd/",
-"us":"/ʌs/",
-"cake":"/keɪk/",
-"sweet":"/swiːt/",
-"ice cream":"/ˈaɪs kriːm/",
-"ice":"/aɪs/",
-"cream":"/kriːm/",
-"weather":"/ˈweðə(r)/",
-"windy":"/ˈwɪndi/",
-"snowy":"/ˈsnəʊi/",
-"rainy":"/ˈreɪni/",
-"sunny":"/ˈsʌni/",
-"worry":"/ˈwʌri/",
-"wait":"/weɪt/",
-"later":"/ˈleɪtə(r)/",
-"egg":"/eɡ/",
-"other":"/ˈʌðə(r)/",
-"season":"/ˈsiːzn/",
-"spring":"/sprɪŋ/",
-"summer":"/ˈsʌmə(r)/",
-"autumn":"/ˈɔːtəm/",
-"winter":"/ˈwɪntə(r)/",
-"year":"/jɪə(r)/",
-"lots of":"/lɒts ɒv/",
-"make":"/meɪk/",
-"some":"/sʌm/",
-"hat":"/hæt/",
-"clothes":"/kləʊðz/",
-"shirt":"/ʃɜːt/",
-"skirt":"/skɜːt/",
-"coat":"/kəʊt/",
-"shoe":"/ʃuː/",
-"put":"/pʊt/",
-"them":"/ðəm/",
-"sun":"/sʌn/",
-"put on":"/pʊt ɒn/",
-"on":"/ɒn/",
-"sit":"/sɪt/",
-"jump":"/dʒʌmp/",
-"favourite":"/ˈfeɪvərɪt/",
-"holiday":"/ˈhɒlədeɪ/",
-"paper‑cut":"/ˈpeɪpə kʌt/",
-"up":"/ʌp/",
-"put up":"/pʊt ʌp/",
-"lucky":"/ˈlʌki/",
-"kite":"/kaɪt/",
-"card":"/kɑːd/",
-"sport":"/spɔːt/",
-"high":"/haɪ/",
-"far":"/fɑː(r)/",
-"ping‑pong":"/ˈpɪŋ pɒŋ/",
-"volleyball":"/ˈvɒlibɔːl/",
-"across":"/əˈkrɒs/",
-"hope":"/həʊp/",
-"lose":"/luːz/",
-"because":"/bɪˈkɒz/",
-"because of":"/bɪˈkɒz ɒv/",
-"cancer":"/ˈkænsə(r)/",
-"money":"/ˈmʌni/",
-"hard":"/hɑːd/",
-"kind":"/kaɪnd/",
-"keep":"/kiːp/",
-"month":"/mʌnθ/",
-"ill":"/ɪl/",
-"remember":"/rɪˈmembə(r)/",
-"fail":"/feɪl/",
-"give":"/ɡɪv/",
-"give up":"/ɡɪv ʌp/",
-"never":"/ˈnevə(r)/",
-"try":"/traɪ/",
-"try your best":"/traɪ jɔː(r) best/",
-"star":"/stɑː(r)/",
-"ability":"/əˈbɪləti/",
-"player":"/ˈpleɪə(r)/",
-"phew":"/fjuː/",
-"wash":"/wɒʃ/",
-"dish":"/dɪʃ/",
-"feed":"/fiːd/",
-"sweep":"/swiːp/",
-"floor":"/flɔː(r)/",
-"rubbish":"/ˈrʌbɪʃ/",
-"chore":"/tʃɔː(r)/",
-"to‑do":"/tə duː/",
-"may":"/meɪ/",
-"outside":"/ˌaʊtˈsaɪd/",
-"tidy":"/ˈtaɪdi/",
-"easy":"/ˈiːzi/",
-"clean":"/kliːn/",
-"woof":"/wʊf/",
-"job":"/dʒɒb/",
-"Good job":"/ɡʊd dʒɒb/",
-"dirty":"/ˈdɜːti/",
-"desk":"/desk/",
-"wall":"/wɔːl/",
-"again":"/əˈɡen/",
-"also":"/ˈɔːlsəʊ/",
-"sunshine":"/ˈsʌnʃaɪn/",
-"feel":"/fiːl/",
-"sometimes":"/ˈsʌmtaɪmz/",
-"helpful":"/ˈhelpfl/",
-"warm":"/wɔːm/",
-"water":"/ˈwɔːtə(r)/",
-"yard":"/jɑːd/",
-"helper":"/ˈhelpə(r)/",
-"pick":"/pɪk/",
-"cow":"/kaʊ/",
-"cut":"/kʌt/",
-"grass":"/ɡrɑːs/",
-"cloud":"/klaʊd/",
-"by":"/baɪ/",
-"cloudy":"/ˈklaʊdi/",
-"wind":"/wɪnd/",
-"blow":"/bləʊ/",
-"rain":"/reɪn/",
-"snow":"/snəʊ/",
-"any":"/ˈeni/",
-"cold":"/kəʊld/",
-"or":"/ɔː(r)/",
-"enjoy":"/ɪnˈdʒɔɪ/",
-"diary":"/ˈdaɪəri/",
-"teacher":"/ˈtiːtʃə(r)/",
-"taste":"/teɪst/",
-"real":"/ˈriːəl/",
-"turn on":"/tɜːn ɒn/",
-"TV":"/ˌtiː ˈviː/",
-"tv":"/ˌtiː ˈviː/",
-"report":"/rɪˈpɔːt/",
-"birthday":"/ˈbɜːθdeɪ/",
-"fly":"/flaɪ/",
-"snowstorm":"/ˈsnəʊstɔːm/",
-"beach":"/biːtʃ/",
-"sea":"/siː/",
-"equator":"/ɪˈkweɪtə(r)/",
-"round":"/raʊnd/",
-"all year round":"/ɔːl jɪə(r) raʊnd/",
-"quite":"/kwaɪt/",
-"join":"/dʒɔɪn/",
-"bus":"/bʌs/",
-"car":"/kɑː(r)/",
-"train":"/treɪn/",
-"city":"/ˈsɪti/",
-"town":"/taʊn/",
-"ship":"/ʃɪp/",
-"plane":"/pleɪn/",
-"sky":"/skaɪ/",
-"place":"/pleɪs/",
-"near":"/nɪə(r)/",
-"travel":"/ˈtrævl/",
-"way":"/weɪ/",
-"minute":"/ˈmɪnɪt/",
-"wear":"/weə(r)/",
-"live":"/lɪv/",
-"away":"/əˈweɪ/",
-"truck":"/trʌk/",
-"bamboo":"/ˌbæmˈbuː/",
-"bike":"/baɪk/",
-"ring":"/rɪŋ/",
-"beep":"/biːp/",
-"subway":"/ˈsʌbweɪ/",
-"whoosh":"/wuːʃ/",
-"tram":"/træm/",
-"chug":"/tʃʌɡ/",
-"wheel":"/wiːl/",
-"left":"/left/",
-"straight":"/streɪt/",
-"library":"/ˈlaɪbrəri/",
-"centre":"/ˈsentə(r)/",
-"cinema":"/ˈsɪnəmə/",
-"hospital":"/ˈhɒspɪtl/",
-"supermarket":"/ˈsuːpəmɑːkɪt/",
-"museum":"/mjuˈziːəm/",
-"tomorrow":"/təˈmɒrəʊ/",
-"woman":"/ˈwʊmən/",
-"wish":"/wɪʃ/",
-"step":"/step/",
-"own":"/əʊn/",
-"on one's own":"/ɒn wʌnz əʊn/",
-"cross":"/krɒs/",
-"careful":"/ˈkeəfl/",
-"be careful":"/bi ˈkeəfl/",
-"underground":"/ˈʌndəɡraʊnd/",
-"hello":"/həˈləʊ/",
-"world":"/wɜːld/",
-"i":"/aɪ/",
-"reading":"/ˈriːdɪŋ/",
-"books":"/bʊks/",
-"today":"/təˈdeɪ/",
-"is":"/ɪz/",
-"a":"/ə/",
-"day":"/deɪ/",
-"every":"/ˈevri/",
-"time":"/taɪm/",
-"we":"/wiː/",
-"finish":"/ˈfɪnɪʃ/",
-"mum":"/mʌm/",
-"draw":"/drɔː/",
-"chorelist":"/ˈtʃɔːlɪst/",
-"can":"/kæn/",
-"get":"/ɡet/",
-"reward":"/rɪˈwɔːd/",
-"work":"/wɜːk/",
-"with":"/wɪð/",
-"one":"/wʌn/",
-"choose":"/tʃuːz/",
-"bedtime":"/ˈbedtaɪm/",
-"story":"/ˈstɔːri/",
-"two":"/tuː/",
-"watch":"/wɒtʃ/",
-"three":"/θriː/",
-"play":"/pleɪ/",
-"an":"/æn/",
-"hour":"/ˈaʊə(r)/",
-"helping":"/ˈhelpɪŋ/",
-"home":"/həʊm/",
-"rewarding":"/rɪˈwɔːdɪŋ/",
-"hi":"/haɪ/",
-"everyone":"/ˈevriwʌn/",
-"my":"/maɪ/",
-"name":"/neɪm/",
-"am":"/æm/",
-"old":"/əʊld/",
-"help":"/help/",
-"chores":"/tʃɔːz/",
-"in":"/ɪn/",
-"the":"/ðə/",
-"morning":"/ˈmɔːnɪŋ/",
-"room":"/ruːm/",
-"and":"/ænd/",
-"take":"/teɪk/",
-"out":"/aʊt/",
-"chicken":"/ˈtʃɪkɪn/",
-"after":"/ˈɑːftə(r)/",
-"lunch":"/lʌntʃ/",
-"afternoon":"/ˌɑːftəˈnuːn/",
-"bed":"/bed/",
-"jane":"/dʒeɪn/",
-"twelve":"/twelv/",
-"adam":"/ˈædəm/",
-"have":"/hæv/",
-"sister":"/ˈsɪstə(r)/",
-"brother":"/ˈbrʌðə(r)/",
-"share":"/ʃeə(r)/",
-"many":"/ˈmeni/",
-"father":"/ˈfɑːðə(r)/",
-"twice":"/twaɪs/",
-"aweek":"/ə wiːk/",
-"friday":"/ˈfraɪdeɪ/",
-"plant":"/plɑːnt/",
-"emily":"/ˈemɪli/",
-"evening":"/ˈiːvnɪŋ/",
-"how":"/haʊ/",
-"was":"/wəz/",
-"your":"/jɔː(r)/",
-"weekend":"/ˌwiːkˈend/",
-"it":"/ɪt/",
-"what":"/wɒt/",
-"about":"/əˈbaʊt/",
-"yours":"/jɔːz/",
-"did":"/dɪd/",
-"you":"/juː/",
-"do":"/duː/",
-"anything":"/ˈeniθɪŋ/",
-"special":"/ˈspeʃl/",
-"not":"/nɒt/",
-"really":"/ˈriːəli/",
-"just":"/dʒʌst/",
-"played":"/pleɪd/",
-"computer":"/kəmˈpjuːtə(r)/",
-"game":"/ɡeɪm/",
-"friends":"/frendz/",
-"didn't":"/ˈdɪdnt/",
-"know":"/nəʊ/",
-"were":"/wɜː(r)/",
-"into":"/ˈɪntuː/",
-"that":"/ðæt/",
-"i'd":"/aɪd/",
-"love":"/lʌv/",
-"to":"/tuː/",
-"next":"/nekst/",
-"going":"/ˈɡəʊɪŋ/",
-"this":"/ðɪs/",
-"wednesday":"/ˈwenzdeɪ/",
-"let":"/let/",
-"me":"/miː/",
-"down":"/daʊn/",
-"details":"/dɪˈteɪlz/",
-"moscow":"/ˈmɒskəʊ/",
-"go":"/ɡəʊ/",
-"skiing":"/ˈskiːɪŋ/",
-"need":"/niːd/",
-"scarf":"/skɑːf/",
-"gloves":"/ɡlʌvz/",
-"beijing":"/beɪˈdʒɪŋ/",
-"off":"/ɒf/",
-"when":"/wen/",
-"umbrella":"/ʌmˈbrelə/",
-"four":"/fɔː(r)/",
-"seasons":"/ˈsiːznz/",
-"black":"/blæk/",
-"clouds":"/klaʊdz/",
-"come":"/kʌm/",
-"begins":"/bɪˈɡɪnz/",
-"changes":"/ˈtʃeɪndʒɪz/",
-"quickly":"/ˈkwɪkli/",
-"people":"/ˈpiːpl/",
-"see":"/siː/",
-"often":"/ˈɒfn/",
-"shine":"/ʃaɪn/",
-"becomes":"/bɪˈkʌmz/",
-"why":"/waɪ/",
-"then":"/ðen/",
-"are":"/ɑː(r)/",
-"starts":"/stɑːts/",
-"interesting":"/ˈɪntrəstɪŋ/",
-  "every":"/ˈevri/"
+  "sad":"/sæd/",
+  "angry":"/ˈæŋɡri/",
+  "tired":"/ˈtaɪəd/",
+  "hungry":"/ˈhʌŋɡri/",
+  "truck":"/trʌk/"
 };
 function fisherYatesShuffle(arr) {
   const copy = [...arr];
@@ -902,249 +556,6 @@ function getWordPhonetic(rawWord) {
   if (!clean) return "";
   return wordDict[clean] || "";
 }
-const BUILTIN_WORDS = {
-  g2: {
-    unit1: `
-feeling
-sad
-angry
-tired
-hungry
-fun
-show
-turn
-apple
-o'clock
-want
-for
-dinner`,
-    unit2: `
-yummy
-food
-eat
-banana
-rice
-noodle
-milk
-bread
-like
-but
-good
-us
-cake
-sweet
-ice cream`,
-    unit3: `
-weather
-windy
-snowy
-rainy
-sunny
-worry
-wait
-later
-egg
-other`,
-    unit4: `
-season
-spring
-summer
-autumn
-winter
-year
-lots of
-make
-some
-hat`,
-    unit5: `
-clothes
-shirt
-skirt
-coat
-shoe
-put
-them
-sun
-put on
-sit
-jump
-favourite`,
-    unit6: `
-holiday
-paper-cut
-up
-put up
-lucky
-kite
-card`
-  },
-  g4: {
-    unit1: `
-sport
-jump
-high
-far
-ping-pong
-volleyball
-across
-hope
-lose
-because
-because of
-cancer
-money
-hard
-kind
-keep
-month
-ill
-year
-remeber
-fail
-give
-give up
-never 
-try
-try your best
-star
-ability
-player`,
-    unit2: `
-phew
-wash
-dish
-feed
-sweep
-floor
-rubbish
-chore
-to-do
-may
-outside
-tidy
-easy
-clean
-woof
-job
-Good job
-dirty
-desk
-wall
-again
-also
-sunshine
-feel
-tired
-helpful
-desk
-wall
-again
-also
-sunshine
-sometimes
-feel
-tired
-helpful
-warm
-water
-yard
-helper
-pick
-cow
-cut
-grass`,
-    unit3: `
-weather
-sunny
-cloud
-by
-cloudy
-wind
-blow
-windy
-rain
-rainy
-snow
-any
-cold
-or
-enjoy
-diary
-teacher
-taste
-ice cream
-real
-later
-coat
-turn
-turn on
-TV
-report`,
-    unit4: `
-season
-spring
-summer
-autumn
-winter
-favourite
-birthday
-fly
-snowstorm
-beach
-sea
-equator
-round
-all year round
-quite
-join`,
-    unit5: `
-bus
-car
-train
-city
-town
-ship
-plane
-sky
-place
-near
-travel
-way
-minute
-wear
-live
-away
-truck
-bamboo
-bike
-ring
-beep
-subway
-whoosh
-tram
-chug`,
-    unit6: `
-wheel
-left
-straight
-library
-centre
-cinema
-hospital
-supermarket
-museum
-tomorrow
-woman
-wish
-step
-own
-on one's own
-cross
-careful
-be careful
-underground`
-  }
-};
 const BUILTIN_ARTICLES={
 talkWeekend:`How was your weekend? 周末过得好吗?
 It was good. 挺好的
@@ -1203,15 +614,263 @@ In the morning, I can tidy my room and sweep the floor. 早上我整理房间、
 I can take out the rubbish, feed the chickens, wash up and get the eggs. 我会倒垃圾、喂鸡、洗碗、捡鸡蛋
 After lunch, I can milk the cow. 午饭后，我会挤牛奶
 In the afternoon, I can make the bed. 下午我整理床铺
-I am helpful. 我很能干`
+I am helpful. 我很能干`,
+pandatravel:`Hello,I'm Jingjing. 哈喽，我叫晶晶。
+This is my friend Sihai. We live in Sichuan. 这是我的朋友四海，我们住在四川。
+It's time to go to Qatar! 是时候出发去卡塔尔了！
+But how do we get there? It's far away. 但是我们怎么去那里？那里很远。
+Look! The truck is here. 看！卡车来了。
+Let's go! Goodbye, everyone! 我们走吧！大家再见！
+Now we are on a plane in the sky. Goodbye, China! 现在我们坐上天上的飞机，再见中国！
+What a long way! Here we are! Hello, Qatar! 路途真遥远！我们到啦！你好卡塔尔！
+We go to our new home by truck. 我们坐卡车去往新家。
+It's our new home. It's big. 这是我们的新家，它很大。
+We've got a lot of bamboo here. 我们这里有许许多多竹子。
+It comes from China by plane! 竹子是坐飞机从中国运过来的！
+Many people come to see us. 很多人来看望我们。
+We've got a lot of new friends! 我们交到很多新朋友！
+We are happy! 我们很开心。`,
+unit21:`
+feeling
+sad 难受
+angry
+tired
+hungry
+fun
+show
+turn
+apple
+o'clock
+want 要
+for
+dinner `,
+unit22:`yummy
+food
+eat
+banana
+rice
+noodle
+milk
+bread
+like
+but
+good
+us
+cake 蛋糕
+sweet
+ice cream.冰淇淋`,
+unit23:`
+weather
+windy
+snowy
+rainy
+sunny
+worry
+wait
+later
+egg
+other`,
+unit24:`
+season
+spring
+summer
+autumn
+winter
+year
+lots of
+make
+some
+hat`,
+unit25:`
+clothes
+shirt
+skirt
+coat
+shoe
+put
+them
+sun
+put on
+sit
+jump
+favourite`,
+unit26:`
+holiday
+paper‑cut
+up
+put up
+lucky
+kite
+card`,
+unit41:`
+sport
+jump
+high
+far
+ping‑pong
+volleyball
+across
+hope
+lose
+because
+because of sb/sth
+cancer
+money
+hard
+kind
+keep
+month
+ill
+year
+remember
+fail
+give
+give up
+never
+try
+try your best
+star
+ability
+player`,
+unit42:`
+phew
+wash
+dish
+feed
+sweep
+floor
+rubbish
+chore
+to‑do list
+may
+outside
+tidy
+easy
+clean
+woof
+job
+Good job
+dirty
+desk
+wall
+again
+also
+sunshine
+sometimes
+feel
+tired
+helpful
+warm
+warm up
+water
+yard
+helper
+pick
+pig
+cow 
+cut
+grass`,
+unit43:`
+weather 天气
+sunny 阳光充足的
+cloud 云
+by 经过
+cloudy 多云的，阴天的
+wind 风
+blow 吹，刮
+windy 风大的；多风的
+rain 雨
+rainy 多雨的
+snow 雪
+any 任何一个
+cold 冷的，寒冷的
+or 或者
+enjoy 享受……的乐趣
+diary 日记
+teacher 教师，老师
+taste 有……的味道
+ice cream 冰激凌，雪糕
+real 真的，真正的
+later 之后
+coat 外套
+turn 转身；转动
+turn on 打开
+TV 电视
+report 报道`,
+unit44:`
+season
+spring
+summer
+autumn
+winter
+favourite
+birthday
+fly
+snowstorm
+beach
+sea
+equator
+round
+all year round
+quite
+join`,
+unit45:`
+bus
+car
+train
+city
+town
+ship
+plane
+sky
+place
+near
+travel
+way
+picnic
+minute
+wear
+live
+away
+truck
+bamboo
+bike
+ring
+beep
+subway
+whoosh
+tram
+chug`,
+unit46:`
+wheel
+left
+straight
+library
+centre
+cinema
+hospital
+supermarket
+museum
+tomorrow
+woman
+wish
+step
+own
+on one's own
+cross
+careful
+be careful
+underground`,
 };
-// ========== 修复后的 splitSentences：支持大段纯英文自动分句 ==========
+
+/**
+ * @param {string} text 原始文本
+ */
 function splitSentences(text){
   text=text.trim();
   if(!text)return [];
   const rawLines = text.split(/\r?\n/);
   const res=[];
-  // 将纯英文段落按 . ! ? +大写字母 切分成句子
   function splitEnglishParagraphToSentences(paraText){
     paraText = paraText.trim();
     if(!paraText) return [];
@@ -1243,14 +902,13 @@ function splitSentences(text){
     }
     const zhMatch=line.match(/[\u4e00-\u9fff\u3000-\u303f\uff00-\uffef]/);
     if(zhMatch){
-        // 存在中文：单词/中英对照，不拆分
         zh=line.slice(zhMatch.index).trim();
         en=line.slice(0,zhMatch.index).replace(/[.!?,;]$/,'').trim();
         if(en && /[A‑Za‑z]/.test(en)){
-            res.push({en, phonetic:"(无音标)", zh});
+            res.push({en:en, phonetic:"(无音标)", zh:zh});
         }
     }else{
-        // ✅纯英文，执行分句
+        //全部统一短文模式，不再区分单词列表
         const subSentences = splitEnglishParagraphToSentences(line);
         for(const subEn of subSentences){
             res.push({
@@ -1263,9 +921,33 @@ function splitSentences(text){
   }
   return res;
 }
+
+// 带超时、异常捕获翻译包装，超时直接返回兜底文本
+async function translateWithTimeout(en){
+  return Promise.race([
+    (async ()=>{
+      const url='https://api.mymemory.translated.net/get?'+new URLSearchParams({q:en,langpair:'en|zh-CN'});
+      const resp=await fetch(url);
+      const data=await resp.json();
+      const zh=(data.responseData&&data.responseData.translatedText||'').trim();
+      return zh||null;
+    })(),
+    new Promise(resolve=>setTimeout(()=>resolve(null),TRANSLATE_TIMEOUT))
+  ]).catch(()=>{
+    return null;
+  });
+}
+
 function switchMode(mode){
     if(listenAutoTimer){clearTimeout(listenAutoTimer);listenAutoTimer=null;}
+    if(autoTimer){clearTimeout(autoTimer);autoTimer=null;}
+    if(errTipTimer){clearTimeout(errTipTimer);errTipTimer=null;}
+    if('speechSynthesis' in window) speechSynthesis.cancel();
     forceStopRecordIfNeed();
+    submitted = false;
+    wordInputs = [];
+    targetWords = [];
+
     currentMode = mode;
     document.querySelectorAll(".action-btn").forEach(b=>{
         if(b.id!=='btnShuffleMode' && b.id!=='btnReadZh' && b.id!=='btnShowPhonetic') b.classList.remove("active");
@@ -1290,12 +972,6 @@ function openImportModal(){
   document.getElementById('import-modal').classList.add('show');
 }
 function closeImportModal(){document.getElementById('import-modal').classList.remove('show');}
-function loadUnit(grade,unit){
-  closeImportModal();
-  const words=(BUILTIN_WORDS[grade]||{})['unit'+unit]||'';
-  if(!words){alert('该单元暂无单词数据，请稍后补全或改用"粘贴导入"。');return;}
-  startPracticeFromText(words);
-}
 function loadArticle(artKey){
   closeImportModal();
   const txt=BUILTIN_ARTICLES[artKey];
@@ -1305,37 +981,107 @@ function loadArticle(artKey){
 function loadPasted(){
   const text=document.getElementById('paste-text').value;
   if(!text.trim()){alert('请先粘贴内容！');return;}
-  addCustomText(text); //保存到本地存储
+  addCustomText(text);
   document.getElementById('paste-text').value='';
   closeImportModal();
   startPracticeFromText(text);
 }
-async function translate(en){
-  const url='https://api.mymemory.translated.net/get?'+new URLSearchParams({q:en,langpair:'en|zh-CN'});
-  try{
-    const resp=await fetch(url);
-    const data=await resp.json();
-    const zh=(data.responseData&&data.responseData.translatedText||'').trim();
-    return zh||null;
-  }catch(e){
-    console.warn("翻译接口异常",e);
-    return null;
-  }
-}
+
 async function startPracticeFromText(text){
   if(!text||!text.trim()){alert('没有可练习的内容，请先导入单词或文件！');return;}
+  if(autoTimer){clearTimeout(autoTimer);autoTimer=null;}
+  if(listenAutoTimer){clearTimeout(listenAutoTimer);listenAutoTimer=null;}
+  if(errTipTimer){clearTimeout(errTipTimer);errTipTimer=null;}
+  if('speechSynthesis' in window) speechSynthesis.cancel();
+
+  submitted = false;
+  wordInputs = [];
+  targetWords = [];
+
+  document.getElementById('correct-bar').innerHTML='';
+  document.getElementById('correct-bar').classList.remove('show');
+
   originalSentences = splitSentences(text);
   if(!originalSentences.length){alert('未识别到有效句子，请检查文本格式！');return;}
   applyShuffle();
   curIdx=0;
+
+  if(currentMode === "write"){
+      switchMode('write');
+      return;
+  }
   if(currentMode==="listen"){
       await showListenSentence();
-  }else{
-      document.getElementById('correct-bar').innerHTML='';
-      document.getElementById('correct-bar').classList.remove('show');
-      await showSentence();
   }
 }
+
+function isElementAttached(el){
+  if(!el) return false;
+  return document.documentElement.contains(el);
+}
+
+//====重大重构：DOM/输入框创建、focus全部放在await之前，保留用户click可信上下文，浏览器允许focus()生效====
+async function showSentence(){
+  forceStopRecordIfNeed();
+  if(autoTimer){clearTimeout(autoTimer);autoTimer=null;}
+  if('speechSynthesis'in window)speechSynthesis.cancel();
+  submitted=false;
+  wordInputs = [];
+
+  const item=sentences[curIdx];
+  targetWords=item.en.split(/\s+/);
+
+  //【同步执行，在await之前，处于用户click可信事件链】
+  document.getElementById('progress').textContent=`第 ${curIdx+1} / ${sentences.length} 句`;
+  document.getElementById('result').classList.remove('show');
+  document.getElementById('btn-next').style.display='none';
+  document.getElementById('en-hint').classList.remove('show');
+  const errTip=document.getElementById('err-tip');
+  errTip.classList.remove('show');errTip.style.background='';errTip.style.borderColor='';errTip.style.color='';
+  document.querySelector('.btn-hint-mobile').textContent='显示整句';
+  document.getElementById('btn-prev').style.visibility=curIdx===0?'hidden':'visible';
+
+  const zhBox=document.getElementById('zh-box');
+  zhBox.textContent='中文意思：加载中…';
+
+  document.getElementById('en-hint').textContent='整句：'+item.en;
+  const wordsBox=document.getElementById('words');
+  wordsBox.innerHTML='';
+  targetWords.forEach((word,i)=>{
+    const cleanLen=(word.replace(/[^\w]/g,'')||word).length;
+    const inp=document.createElement('input');
+    inp.type='text';inp.className='word-input';inp.maxLength=word.length+1;
+    inp.style.width=Math.max(60,cleanLen*18)+'px';
+    inp.autocomplete='off';inp.autocapitalize='off';inp.spellcheck=false;
+    inp.dataset.target=word;inp.dataset.idx=i;inp.dataset.errCount='0';
+    inp.addEventListener('input',()=>checkWord(inp,word));
+    inp.addEventListener('keydown',(e)=>onWordKeydown(e,inp,i));
+    wordsBox.appendChild(inp);
+    wordInputs.push(inp);
+  });
+
+  //====focus放在await前面！同步执行，用户click上下文没有丢失！====
+  if(wordInputs[0] && isElementAttached(wordInputs[0])){
+      wordInputs[0].focus();
+      wordInputs[0].setSelectionRange(wordInputs[0].value.length,wordInputs[0].value.length);
+  }
+
+  // DOM全部渲染、focus做完，再去做异步网络翻译
+  let needTranslate = !item.zh;
+  if(!needTranslate){
+    zhBox.textContent='中文意思：'+item.zh;
+  }else{
+    const zh=await translateWithTimeout(item.en);
+    if(zh){
+      item.zh=zh;
+      zhBox.textContent='中文意思：'+zh;
+    }else{
+      item.zh="(网络异常，无中文翻译)";
+      zhBox.textContent='中文意思：'+item.zh;
+    }
+  }
+}
+
 async function showListenSentence(){
     forceStopRecordIfNeed();
     if('speechSynthesis' in window) speechSynthesis.cancel();
@@ -1345,7 +1091,7 @@ async function showListenSentence(){
     let zh = item.zh;
     if(!zh){
         document.getElementById("listen-zh").innerText = "正在翻译中文…";
-        zh = await translate(item.en);
+        zh = await translateWithTimeout(item.en);
         item.zh = zh||"(网络异常，无中文翻译)";
     }
     document.getElementById("listen-zh").innerText = item.zh;
@@ -1365,6 +1111,7 @@ async function showListenSentence(){
     }
     playListenSentence();
 }
+
 function playListenSentence(){
     const item = sentences[curIdx];
     if(!('speechSynthesis' in window)) return;
@@ -1396,50 +1143,10 @@ function listenPrev(){
     curIdx -=1;
     showListenSentence();
 }
-async function showSentence(){
-  forceStopRecordIfNeed();
-  if(autoTimer){clearTimeout(autoTimer);autoTimer=null;}
-  if('speechSynthesis'in window)speechSynthesis.cancel();
-  submitted=false;
-  const item=sentences[curIdx];
-  targetWords=item.en.split(/\s+/);
-  wordInputs=[];
-  document.getElementById('progress').textContent=`第 ${curIdx+1} / ${sentences.length} 句`;
-  document.getElementById('result').classList.remove('show');
-  document.getElementById('btn-next').style.display='none';
-  document.getElementById('en-hint').classList.remove('show');
-  const errTip=document.getElementById('err-tip');
-  errTip.classList.remove('show');errTip.style.background='';errTip.style.borderColor='';errTip.style.color='';
-  document.querySelector('.btn-hint-mobile').textContent='显示整句';
-  document.getElementById('btn-prev').style.visibility=curIdx===0?'hidden':'visible';
-  const zhBox=document.getElementById('zh-box');
-  if(item.zh){
-    zhBox.textContent='中文意思：'+item.zh;
-  }else{
-    zhBox.textContent='正在翻译中文意思…';
-    const zh=await translate(item.en);
-    if(zh){item.zh=zh;zhBox.textContent='中文意思：'+zh;}
-    else{zhBox.textContent='中文意思：（网络异常，获取失败）';}
-  }
-  document.getElementById('en-hint').textContent='整句：'+item.en;
-  const wordsBox=document.getElementById('words');
-  wordsBox.innerHTML='';
-  targetWords.forEach((word,i)=>{
-    const cleanLen=(word.replace(/[^\w]/g,'')||word).length;
-    const inp=document.createElement('input');
-    inp.type='text';inp.className='word-input';inp.maxLength=word.length+1;
-    inp.style.width=Math.max(60,cleanLen*18)+'px';
-    inp.autocomplete='off';inp.autocapitalize='off';inp.spellcheck=false;
-    inp.dataset.target=word;inp.dataset.idx=i;inp.dataset.errCount='0';
-    inp.addEventListener('input',()=>checkWord(inp,word));
-    inp.addEventListener('keydown',(e)=>onWordKeydown(e,inp,i));
-    wordsBox.appendChild(inp);wordInputs.push(inp);
-  });
-  setTimeout(()=>wordInputs[0]&&wordInputs[0].focus(),80);
-}
-let errTipTimer=null;
+
 function clean(s){return s.replace(/[^\w]/g,'');}
 function checkWord(inp,target){
+  if(!isElementAttached(inp)) return;
   const t=clean(target);const u=clean(inp.value);
   const wasOk=!inp.classList.contains('err');
   inp.classList.remove('err','ok');
@@ -1457,29 +1164,55 @@ function checkWord(inp,target){
   }
 }
 function onWordKeydown(e,inp,idx){
-  if(e.key===' '){e.preventDefault();if(idx<wordInputs.length-1)wordInputs[idx+1].focus();}
+  if(!isElementAttached(inp)) return;
+  if(e.key===' '){
+    e.preventDefault();
+    if(idx<wordInputs.length-1 && isElementAttached(wordInputs[idx+1])){
+        wordInputs[idx+1].focus();
+    }
+  }
   else if(e.key==='Backspace'){
     if(inp.value===''&&idx>0){
-      e.preventDefault();const prev=wordInputs[idx-1];prev.focus();
-      requestAnimationFrame(()=>prev.setSelectionRange(prev.value.length,prev.value.length));
+      e.preventDefault();
+      const prev=wordInputs[idx-1];
+      if(isElementAttached(prev)){
+        prev.focus();
+        requestAnimationFrame(()=>prev.setSelectionRange(prev.value.length,prev.value.length));
+      }
     }
-  }else if(e.key==='Enter'){
+  }
+  else if(e.key==='Enter'){
     e.preventDefault();
     if(submitted){if(autoTimer)clearTimeout(autoTimer);nextSentence();}
     else{finishSentence();}
-  }else if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='h'){e.preventDefault();toggleEnHint();}
+  }else if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='h'){
+    e.preventDefault();toggleEnHint();
+  }
 }
+//全局回车监听
+document.addEventListener('keydown', function(e){
+  if(currentMode !== 'write') return;
+  if(!submitted) return;
+  if(e.key !== 'Enter') return;
+  const tag = e.target.tagName;
+  if(tag === 'TEXTAREA' || tag === 'INPUT') return;
+  e.preventDefault();
+  if(autoTimer) clearTimeout(autoTimer);
+  nextSentence();
+});
 function finishSentence(){
+  if(!wordInputs || wordInputs.length===0) return;
   let correct=0;const total=targetWords.length;const wrong=[];
   wordInputs.forEach((inp,i)=>{
+    if(!isElementAttached(inp)) return;
     const user=inp.value.trim();const target=targetWords[i];
     inp.classList.remove('err');
     if(clean(user)===clean(target)){correct++;inp.classList.add('ok');}
     else{wrong.push(`${target} → ${user||'(空)'}`);inp.classList.add('err');}
   });
- submitted=true;
+  submitted=true;
   const acc=total?(correct/total*100).toFixed(1):0;
-  let msg=`正确 ${correct}/${total}（${acc}%）`;
+let msg=`正确 ${correct}/${total}（${acc}%）`;
   if(wrong.length)msg+='\n错词：'+wrong.join('  |  ');
   else msg+='\n✓ 全对！';
   const r=document.getElementById('result');r.textContent=msg;r.classList.add('show');
@@ -1550,9 +1283,10 @@ document.getElementById('file-input').addEventListener('change',async (e)=>{
   }catch(err){alert('文件解析失败：'+err.message);return;}
   startPracticeFromText(text);
 });
+
 window.addEventListener('DOMContentLoaded',()=>{
   switchMode('listen');
-  startPracticeFromText(BUILTIN_WORDS.g2.unit1||'');
+  loadArticle('unit21');
 });
 </script>
 </body>
