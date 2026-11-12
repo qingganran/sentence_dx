@@ -218,8 +218,8 @@
   }
   .modal-mask.show { display: flex; }
   .modal-box {
-    background: #fff; border-radius: 14px; padding: 22px; width: 100%;
-    max-width: 460px; box-shadow: 0 10px 30px rgba(0,0,0,.2);
+    background: #fff; border-radius: 14px; padding: 18px; width: 100%;
+    max-width: 400px; box-shadow: 0 10px 30px rgba(0,0,0,.2);
   }
   .modal-title {
     font-size: 18px; font-weight: 700; text-align: center; margin-bottom: 6px;
@@ -227,9 +227,9 @@
   .modal-sub { text-align: center; color: var(--muted); font-size: 13px; margin-bottom: 10px; }
   .modal-option {
     display: flex; align-items: center; gap: 12px; width: 100%;
-    padding: 14px 16px; margin-bottom: 10px; text-align: left;
+    padding: 12px 14px; margin-bottom: 10px; text-align: left;
     background: #f8fafc; border: 1px solid var(--line); border-radius: 10px;
-    font-size: 15px; min-height: 52px;
+    font-size: 14px; min-height: 46px;
   }
   .modal-option:hover { border-color: var(--primary); background: #eff6ff; }
   .modal-option .tag {
@@ -244,35 +244,35 @@
     background: #e5e7eb; color: var(--ink); border-radius: 10px; font-size: 14px;
   }
   .modal-paste {
-    width: 100%; min-height: 110px; padding: 10px; margin: 4px 0 10px;
+    width: 100%; min-height: 100px; padding: 10px; margin: 4px 0 10px;
     border: 1px solid var(--line); border-radius: 10px;
-    font-size: 16px; font-family: inherit; resize: vertical;
+    font-size: 15px; font-family: inherit; resize: vertical;
   }
   .modal-paste:focus { outline: 2px solid var(--primary); outline-offset: 1px; }
   .grade-group {
     border: 1px solid var(--line); border-radius: 10px;
-    padding: 10px 12px; margin-bottom: 10px; background: #f8fafc;
+    padding: 10px 10px; margin-bottom: 10px; background: #f8fafc;
   }
   .grade-head {
-    display: flex; align-items: center; gap: 8px; font-size: 15px;
+    display: flex; align-items: center; gap: 8px; font-size: 14px;
     font-weight: 700; margin-bottom: 8px;
   }
   .grade-head .tag { font-size: 12px; padding: 2px 8px; border-radius: 6px; color: #fff; }
   .grade-head .tag.art { background: #7c3aed; }
   .grade-head .tag.custom {background:#9333ea;}
   .unit-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;
   }
   .unit-btn {
-    padding: 10px 4px; border: 1px solid var(--line); border-radius: 8px;
-    background: #fff; font-size: 14px; min-height: 42px; cursor: pointer;
+    padding: 7px 2px; border: 1px solid var(--line); border-radius: 6px;
+    background: #fff; font-size: 12.5px; min-height: 34px; cursor: pointer;
     text-align: center;
   }
   .unit-btn:hover { border-color: var(--primary); background: #eff6ff; }
   .del-btn{
     border:none;
     background:transparent;
-    font-size:18px;
+    font-size:16px;
     color:red;
     cursor:pointer;
     padding:0;
@@ -333,33 +333,39 @@
 <div class="modal-mask" id="import-modal">
   <div class="modal-box">
     <div class="modal-title">导入单词 / 短文</div>
-    <div class="modal-sub">格式：英文 /音标/ 中文；也支持普通英文+中文；大段纯英文会自动分句</div>
+    <!-- class="modal-sub">格式：英文 /音标/ 中文；英文+中文或大段纯英文-->
     <div class="grade-group">
       <div class="grade-head"><span class="tag art">短文</span> 内置短文练习</div>
       <div class="unit-grid">
-        <button class="unit-btn" onclick="loadArticle('talkWeekend')">谈论兴趣</button>
-        <button class="unit-btn" onclick="loadArticle('weatherMoscowBei')">莫斯科&北京天气</button>
-        <button class="unit-btn" onclick="loadArticle('ukWeather')">英国的天气</button>
-        <button class="unit-btn" onclick="loadArticle('chore1')">做家务系列1</button>
-        <button class="unit-btn" onclick="loadArticle('helpMomChore')">帮妈妈做家务</button>
-        <button class="unit-btn" onclick="loadArticle('pandatravel')">熊猫旅行</button>
+        <!-- 二年级单元 -->
         <button class="unit-btn" onclick="loadArticle('unit21')">二年级一单元</button>
         <button class="unit-btn" onclick="loadArticle('unit22')">二年级二单元</button>
         <button class="unit-btn" onclick="loadArticle('unit23')">二年级三单元</button>
         <button class="unit-btn" onclick="loadArticle('unit24')">二年级四单元</button>
         <button class="unit-btn" onclick="loadArticle('unit25')">二年级五单元</button>
         <button class="unit-btn" onclick="loadArticle('unit26')">二年级六单元</button>
+        <!-- 四年级单元 -->
         <button class="unit-btn" onclick="loadArticle('unit41')">四年级一单元</button>
         <button class="unit-btn" onclick="loadArticle('unit42')">四年级二单元</button>
         <button class="unit-btn" onclick="loadArticle('unit43')">四年级三单元</button>
         <button class="unit-btn" onclick="loadArticle('unit44')">四年级四单元</button>
         <button class="unit-btn" onclick="loadArticle('unit45')">四年级五单元</button>
         <button class="unit-btn" onclick="loadArticle('unit46')">四年级六单元</button>
+        <!-- 英文短文 -->
+        <button class="unit-btn" onclick="loadArticle('weatherReport1')">今日天气播报</button>
+        <button class="unit-btn" onclick="loadArticle('favouriteSeason')">最喜欢的季节</button>
+        <button class="unit-btn" onclick="loadArticle('ukWeather')">英国的天气</button>
+        <button class="unit-btn" onclick="loadArticle('umbrellaStory')">雨伞小故事</button>
+        <button class="unit-btn" onclick="loadArticle('yaoQinwenHelp')">家里的小帮手</button>
+        <button class="unit-btn" onclick="loadArticle('pandatravel')">熊猫旅行</button>
         </div>
     </div>
     <!-- 自定义粘贴文本分组 -->
     <div class="grade-group" id="custom-text-group">
-      <div class="grade-head"><span class="tag custom">自定义</span> 我的粘贴文本</div>
+      <div class="grade-head">
+        <span class="tag custom">自定义</span> 我的粘贴文本
+        <button style="margin-left:auto;font-size:12px;padding:2px 8px;border-radius:6px;border:1px solid #9333ea;background:#f3e8ff;color:#7e22ce;cursor:pointer" onclick="exportCustomTextsToTxt()">💾导出全部为txt</button>
+      </div>
       <div class="unit-grid" id="custom-text-grid">
       </div>
     </div>
@@ -467,6 +473,33 @@ function deleteCustomText(id){
   saveCustomTexts(arr);
   renderCustomTextUI();
 }
+/**
+ * 导出全部自定义粘贴文本为txt，Blob下载
+ */
+function exportCustomTextsToTxt(){
+  const list = getCustomTexts();
+  if(!list.length){
+    alert("暂无自定义粘贴文本，无法导出");
+    return;
+  }
+  // 拼接全部内容，每条之间分割线隔开
+  let output = "=====英语练习自定义粘贴文本导出=====\n";
+  list.forEach(item=>{
+    output += "\n--------【"+item.title+"】--------\n";
+    output += item.content;
+    output += "\n";
+  });
+  // Blob + download
+  const blob = new Blob([output], {type: "text/plain;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "english‑custom‑texts.txt";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
 function renderCustomTextUI(){
   const grid = document.getElementById("custom-text-grid");
   const groupDom = document.getElementById("custom-text-group");
@@ -509,6 +542,340 @@ const wordDict = {
   "sad":"/sæd/",
   "angry":"/ˈæŋɡri/",
   "tired":"/ˈtaɪəd/",
+"fun":"/fʌn/",
+"show":"/ʃəʊ/",
+"turn":"/tɜːn/",
+"apple":"/ˈæpl/",
+"o'clock":"/əˈklɒk/",
+"want":"/wɒnt/",
+"for":"/fɔː(r)/",
+"dinner":"/ˈdɪnə(r)/",
+"yummy":"/ˈjʌmi/",
+"food":"/fuːd/",
+"eat":"/iːt/",
+"banana":"/bəˈnɑːnə/",
+"rice":"/raɪs/",
+"noodle":"/ˈnuːdl/",
+"milk":"/mɪlk/",
+"bread":"/bred/",
+"like":"/laɪk/",
+"but":"/bʌt/",
+"good":"/ɡʊd/",
+"us":"/ʌs/",
+"cake":"/keɪk/",
+"sweet":"/swiːt/",
+"ice cream":"/ˈaɪs kriːm/",
+"ice":"/aɪs/",
+"cream":"/kriːm/",
+"weather":"/ˈweðə(r)/",
+"windy":"/ˈwɪndi/",
+"snowy":"/ˈsnəʊi/",
+"rainy":"/ˈreɪni/",
+"sunny":"/ˈsʌni/",
+"worry":"/ˈwʌri/",
+"wait":"/weɪt/",
+"later":"/ˈleɪtə(r)/",
+"egg":"/eɡ/",
+"other":"/ˈʌðə(r)/",
+"season":"/ˈsiːzn/",
+"spring":"/sprɪŋ/",
+"summer":"/ˈsʌmə(r)/",
+"autumn":"/ˈɔːtəm/",
+"winter":"/ˈwɪntə(r)/",
+"year":"/jɪə(r)/",
+"lots of":"/lɒts ɒv/",
+"make":"/meɪk/",
+"some":"/sʌm/",
+"hat":"/hæt/",
+"clothes":"/kləʊðz/",
+"shirt":"/ʃɜːt/",
+"skirt":"/skɜːt/",
+"coat":"/kəʊt/",
+"shoe":"/ʃuː/",
+"put":"/pʊt/",
+"them":"/ðəm/",
+"sun":"/sʌn/",
+"put on":"/pʊt ɒn/",
+"on":"/ɒn/",
+"sit":"/sɪt/",
+"jump":"/dʒʌmp/",
+"favourite":"/ˈfeɪvərɪt/",
+"holiday":"/ˈhɒlədeɪ/",
+"paper‑cut":"/ˈpeɪpə kʌt/",
+"up":"/ʌp/",
+"put up":"/pʊt ʌp/",
+"lucky":"/ˈlʌki/",
+"kite":"/kaɪt/",
+"card":"/kɑːd/",
+"sport":"/spɔːt/",
+"high":"/haɪ/",
+"far":"/fɑː(r)/",
+"ping‑pong":"/ˈpɪŋ pɒŋ/",
+"volleyball":"/ˈvɒlibɔːl/",
+"across":"/əˈkrɒs/",
+"hope":"/həʊp/",
+"lose":"/luːz/",
+"because":"/bɪˈkɒz/",
+"because of":"/bɪˈkɒz ɒv/",
+"cancer":"/ˈkænsə(r)/",
+"money":"/ˈmʌni/",
+"hard":"/hɑːd/",
+"kind":"/kaɪnd/",
+"keep":"/kiːp/",
+"month":"/mʌnθ/",
+"ill":"/ɪl/",
+"remember":"/rɪˈmembə(r)/",
+"fail":"/feɪl/",
+"give":"/ɡɪv/",
+"give up":"/ɡɪv ʌp/",
+"never":"/ˈnevə(r)/",
+"try":"/traɪ/",
+"try your best":"/traɪ jɔː(r) best/",
+"star":"/stɑː(r)/",
+"ability":"/əˈbɪləti/",
+"player":"/ˈpleɪə(r)/",
+"phew":"/fjuː/",
+"wash":"/wɒʃ/",
+"dish":"/dɪʃ/",
+"feed":"/fiːd/",
+"sweep":"/swiːp/",
+"floor":"/flɔː(r)/",
+"rubbish":"/ˈrʌbɪʃ/",
+"chore":"/tʃɔː(r)/",
+"to‑do":"/tə duː/",
+"may":"/meɪ/",
+"outside":"/ˌaʊtˈsaɪd/",
+"tidy":"/ˈtaɪdi/",
+"easy":"/ˈiːzi/",
+"clean":"/kliːn/",
+"woof":"/wʊf/",
+"job":"/dʒɒb/",
+"Good job":"/ɡʊd dʒɒb/",
+"dirty":"/ˈdɜːti/",
+"desk":"/desk/",
+"wall":"/wɔːl/",
+"again":"/əˈɡen/",
+"also":"/ˈɔːlsəʊ/",
+"sunshine":"/ˈsʌnʃaɪn/",
+"feel":"/fiːl/",
+"sometimes":"/ˈsʌmtaɪmz/",
+"helpful":"/ˈhelpfl/",
+"warm":"/wɔːm/",
+"water":"/ˈwɔːtə(r)/",
+"yard":"/jɑːd/",
+"helper":"/ˈhelpə(r)/",
+"pick":"/pɪk/",
+"cow":"/kaʊ/",
+"cut":"/kʌt/",
+"grass":"/ɡrɑːs/",
+"cloud":"/klaʊd/",
+"by":"/baɪ/",
+"cloudy":"/ˈklaʊdi/",
+"wind":"/wɪnd/",
+"blow":"/bləʊ/",
+"rain":"/reɪn/",
+"snow":"/snəʊ/",
+"any":"/ˈeni/",
+"cold":"/kəʊld/",
+"or":"/ɔː(r)/",
+"enjoy":"/ɪnˈdʒɔɪ/",
+"diary":"/ˈdaɪəri/",
+"teacher":"/ˈtiːtʃə(r)/",
+"taste":"/teɪst/",
+"real":"/ˈriːəl/",
+"turn on":"/tɜːn ɒn/",
+"TV":"/ˌtiː ˈviː/",
+"tv":"/ˌtiː ˈviː/",
+"report":"/rɪˈpɔːt/",
+"birthday":"/ˈbɜːθdeɪ/",
+"fly":"/flaɪ/",
+"snowstorm":"/ˈsnəʊstɔːm/",
+"beach":"/biːtʃ/",
+"sea":"/siː/",
+"equator":"/ɪˈkweɪtə(r)/",
+"round":"/raʊnd/",
+"all year round":"/ɔːl jɪə(r) raʊnd/",
+"quite":"/kwaɪt/",
+"join":"/dʒɔɪn/",
+"bus":"/bʌs/",
+"car":"/kɑː(r)/",
+"train":"/treɪn/",
+"city":"/ˈsɪti/",
+"town":"/taʊn/",
+"ship":"/ʃɪp/",
+"plane":"/pleɪn/",
+"sky":"/skaɪ/",
+"place":"/pleɪs/",
+"near":"/nɪə(r)/",
+"travel":"/ˈtrævl/",
+"way":"/weɪ/",
+"minute":"/ˈmɪnɪt/",
+"wear":"/weə(r)/",
+"live":"/lɪv/",
+"away":"/əˈweɪ/",
+"truck":"/trʌk/",
+"bamboo":"/ˌbæmˈbuː/",
+"bike":"/baɪk/",
+"ring":"/rɪŋ/",
+"beep":"/biːp/",
+"subway":"/ˈsʌbweɪ/",
+"whoosh":"/wuːʃ/",
+"tram":"/træm/",
+"chug":"/tʃʌɡ/",
+"wheel":"/wiːl/",
+"left":"/left/",
+"straight":"/streɪt/",
+"library":"/ˈlaɪbrəri/",
+"centre":"/ˈsentə(r)/",
+"cinema":"/ˈsɪnəmə/",
+"hospital":"/ˈhɒspɪtl/",
+"supermarket":"/ˈsuːpəmɑːkɪt/",
+"museum":"/mjuˈziːəm/",
+"tomorrow":"/təˈmɒrəʊ/",
+"woman":"/ˈwʊmən/",
+"wish":"/wɪʃ/",
+"step":"/step/",
+"own":"/əʊn/",
+"on one's own":"/ɒn wʌnz əʊn/",
+"cross":"/krɒs/",
+"careful":"/ˈkeəfl/",
+"be careful":"/bi ˈkeəfl/",
+"underground":"/ˈʌndəɡraʊnd/",
+"hello":"/həˈləʊ/",
+"world":"/wɜːld/",
+"i":"/aɪ/",
+"reading":"/ˈriːdɪŋ/",
+"books":"/bʊks/",
+"today":"/təˈdeɪ/",
+"is":"/ɪz/",
+"a":"/ə/",
+"day":"/deɪ/",
+"every":"/ˈevri/",
+"time":"/taɪm/",
+"we":"/wiː/",
+"finish":"/ˈfɪnɪʃ/",
+"mum":"/mʌm/",
+"draw":"/drɔː/",
+"chorelist":"/ˈtʃɔːlɪst/",
+"can":"/kæn/",
+"get":"/ɡet/",
+"reward":"/rɪˈwɔːd/",
+"work":"/wɜːk/",
+"with":"/wɪð/",
+"one":"/wʌn/",
+"choose":"/tʃuːz/",
+"bedtime":"/ˈbedtaɪm/",
+"story":"/ˈstɔːri/",
+"two":"/tuː/",
+"watch":"/wɒtʃ/",
+"three":"/θriː/",
+"play":"/pleɪ/",
+"an":"/æn/",
+"hour":"/ˈaʊə(r)/",
+"helping":"/ˈhelpɪŋ/",
+"home":"/həʊm/",
+"rewarding":"/rɪˈwɔːdɪŋ/",
+"hi":"/haɪ/",
+"everyone":"/ˈevriwʌn/",
+"my":"/maɪ/",
+"name":"/neɪm/",
+"am":"/æm/",
+"old":"/əʊld/",
+"help":"/help/",
+"chores":"/tʃɔːz/",
+"in":"/ɪn/",
+"the":"/ðə/",
+"morning":"/ˈmɔːnɪŋ/",
+"room":"/ruːm/",
+"and":"/ænd/",
+"take":"/teɪk/",
+"out":"/aʊt/",
+"chicken":"/ˈtʃɪkɪn/",
+"after":"/ˈɑːftə(r)/",
+"lunch":"/lʌntʃ/",
+"afternoon":"/ˌɑːftəˈnuːn/",
+"bed":"/bed/",
+"jane":"/dʒeɪn/",
+"twelve":"/twelv/",
+"adam":"/ˈædəm/",
+"have":"/hæv/",
+"sister":"/ˈsɪstə(r)/",
+"brother":"/ˈbrʌðə(r)/",
+"share":"/ʃeə(r)/",
+"many":"/ˈmeni/",
+"father":"/ˈfɑːðə(r)/",
+"twice":"/twaɪs/",
+"aweek":"/ə wiːk/",
+"friday":"/ˈfraɪdeɪ/",
+"plant":"/plɑːnt/",
+"emily":"/ˈemɪli/",
+"evening":"/ˈiːvnɪŋ/",
+"how":"/haʊ/",
+"was":"/wəz/",
+"your":"/jɔː(r)/",
+"weekend":"/ˌwiːkˈend/",
+"it":"/ɪt/",
+"what":"/wɒt/",
+"about":"/əˈbaʊt/",
+"yours":"/jɔːz/",
+"did":"/dɪd/",
+"you":"/juː/",
+"do":"/duː/",
+"anything":"/ˈeniθɪŋ/",
+"special":"/ˈspeʃl/",
+"not":"/nɒt/",
+"really":"/ˈriːəli/",
+"just":"/dʒʌst/",
+"played":"/pleɪd/",
+"computer":"/kəmˈpjuːtə(r)/",
+"game":"/ɡeɪm/",
+"friends":"/frendz/",
+"didn't":"/ˈdɪdnt/",
+"know":"/nəʊ/",
+"were":"/wɜː(r)/",
+"into":"/ˈɪntuː/",
+"that":"/ðæt/",
+"i'd":"/aɪd/",
+"love":"/lʌv/",
+"to":"/tuː/",
+"next":"/nekst/",
+"going":"/ˈɡəʊɪŋ/",
+"this":"/ðɪs/",
+"wednesday":"/ˈwenzdeɪ/",
+"let":"/let/",
+"me":"/miː/",
+"down":"/daʊn/",
+"details":"/dɪˈteɪlz/",
+"moscow":"/ˈmɒskəʊ/",
+"go":"/ɡəʊ/",
+"skiing":"/ˈskiːɪŋ/",
+"need":"/niːd/",
+"scarf":"/skɑːf/",
+"gloves":"/ɡlʌvz/",
+"beijing":"/beɪˈdʒɪŋ/",
+"off":"/ɒf/",
+"when":"/wen/",
+"umbrella":"/ʌmˈbrelə/",
+"four":"/fɔː(r)/",
+"seasons":"/ˈsiːznz/",
+"black":"/blæk/",
+"clouds":"/klaʊdz/",
+"come":"/kʌm/",
+"begins":"/bɪˈɡɪnz/",
+"changes":"/ˈtʃeɪndʒɪz/",
+"quickly":"/ˈkwɪkli/",
+"people":"/ˈpiːpl/",
+"see":"/siː/",
+"often":"/ˈɒfn/",
+"shine":"/ʃaɪn/",
+"becomes":"/bɪˈkʌmz/",
+"why":"/waɪ/",
+"then":"/ðen/",
+"are":"/ɑː(r)/",
+"starts":"/stɑːts/",
+"interesting":"/ˈɪntrəstɪŋ/",
+"Sichuan":"/ˌsiːtʃˈwɑːn/",
+"Qatar":"/ˈkɑːtɑː(r)/",
   "hungry":"/ˈhʌŋɡri/",
   "truck":"/trʌk/"
 };
@@ -557,27 +924,6 @@ function getWordPhonetic(rawWord) {
   return wordDict[clean] || "";
 }
 const BUILTIN_ARTICLES={
-talkWeekend:`How was your weekend? 周末过得好吗?
-It was good. 挺好的
-What about yours? 你呢?
-Did you do anything special? 周末做了什么特别的事情吗?
-Not really. 没什么特别的
-Just played a computer game with some friends. 只是和朋友们一起玩了电脑游戏
-I didn't know you were into that. 你居然喜欢游戏
-What did you play? 玩了什么游戏?
-We played RD11. RD11
-Oh! I'm also playing that. 哦!我最近也在玩那个游戏
-I'd love to join in next time you play. 你们下次玩游戏时，带上我吧
-We're going to play this Wednesday. 我们打算这周三玩一下
-Let me take down your details 把你的用户名告诉我吧`,
-weatherMoscowBei:`In Moscow snowy and cold 在莫斯科，下雪又寒冷
-You can play in the snow and go skiing 你可以玩雪、滑雪
-You need to wear a hat 你需要戴上帽子
-You need to wear a scarf and gloves. 你需要佩戴围巾和手套
-In Beijing 在北京
-Windy and warm 有风，气候温暖
-It's a good time to play outside. 很适合外出玩耍
-You can take off your coat and put on your shirt. 你可以脱掉外套，穿上衬衫`,
 ukWeather:`When you are in the UK, you can often see people going out with an umbrella on a sunny day. 在英国，你经常会看到大晴天的人们出门带着雨伞
 Why? 为什么？
 Because the weather changes quickly. 因为天气变化很快
@@ -588,33 +934,6 @@ The weather becomes cold, just like in winter. 天气变得寒冷，如同冬天
 In the afternoon, it is sunny again. 下午又重新放晴
 The sun begins to shine, and it's just like in summer. 太阳照耀，就像夏天
 How interesting it is! 多么有趣啊！`,
-chore1:`Hi everyone My name is Jane. 大家好，我叫简
-I am twelve years old. 我十二岁
-I can help with chores at home. 我在家会帮忙做家务
-In the morning, I can make the bed. 早上我会整理床铺
-I can help my mum wash the dishes after lunch. 午饭后我帮妈妈洗碗
-In the afternoon, I can take out the rubbish. 下午我会倒垃圾
-I am helpful! 我很能干！
-Hi, I'm Adam. 你好，我是亚当
-I have one sister and one brother. 我有一个姐姐和一个弟弟
-We share many chores at home. 在家我们分担很多家务
-My brother and I wash our father's car twice a week. 我和弟弟每周洗两次爸爸的汽车
-Every Friday, I cut the grass and my brother waters the plants. 每周五，我修剪草坪，弟弟给植物浇水
-My sister, Emily, sweeps the floor every evening and washes the dishes after dinner. 我的姐姐艾米丽每天晚上扫地，晚饭后洗碗`,
-helpMomChore:`Every time we finish a chore, Mum draws a star on our chore list. 每次做完家务，妈妈就会在我们家务清单画一颗星星
-We can get rewards for hard work! 努力干活可以获得奖励
-With one star, we can choose a bedtime story. 一颗星星，可以选一个睡前故事
-With two stars, we can watch our favourite TV show. 两颗星星，可以看最喜欢的电视节目
-With three stars, we can play outside for an hour. 三颗星星，可以外出玩一小时
-Helping at home is fun and rewarding ！ 在家帮忙既有趣又有回报
-Hi everyone. My name is Xiaoxia. 大家好，我叫晓晓
-I am 10 years old.
-I can help Mum with chores at home. 我在家帮妈妈做家务
-In the morning, I can tidy my room and sweep the floor. 早上我整理房间、扫地
-I can take out the rubbish, feed the chickens, wash up and get the eggs. 我会倒垃圾、喂鸡、洗碗、捡鸡蛋
-After lunch, I can milk the cow. 午饭后，我会挤牛奶
-In the afternoon, I can make the bed. 下午我整理床铺
-I am helpful. 我很能干`,
 pandatravel:`Hello,I'm Jingjing. 哈喽，我叫晶晶。
 This is my friend Sihai. We live in Sichuan. 这是我的朋友四海，我们住在四川。
 It's time to go to Qatar! 是时候出发去卡塔尔了！
@@ -861,8 +1180,22 @@ cross
 careful
 be careful
 underground`,
+weatherReport1:`What’s the weather like today?
+Is it cold or hot?
+Do I need my coat or not?
+What’s the weather like today?
+Is it rainy or sunny?
+Can we have some fun outside?
+What’s the weather like today?
+Come on! Let’s turn on the TV.
+Let’s watch the report today!`,
+favouriteSeason:`What’s your favourite season, friends?  I don’t like winter. It’s cold.
+I like spring and autumn.They are beautiful.I like summer best. I can
+eat ice cream. What about you, Lingling? I like summer best, too.Why do
+you also like summer?Because my birthday is in summer!`,
+umbrellaStory:`umbrellas  What’s the weather like?It’s sunny and warm.We can go out to play.Oh, it’s cool!It’s windy and cloudy. Let’s go home!Oh! It’s rainy now.Let’s run!Look! I’ve got a good idea.Our umbrellas are great! Look! Let’s go and help!Thank you.`,
+yaoQinwenHelp:`Yao Qinwen help I’m Yao Qinwen. This is my family. My dad is ill. My grandma is old. My mum is busy. I must help!I take care of Dad.Can I make the bed for you, Dad?Thank you, Wenwen.I take care of Grandma.Wenwen, can you help clean the room?Sometimes Mum feels tired.I take care of her, too.Wenwen is so helpful. She is the sunshine of our family.I’m happy to warm up my family.`,
 };
-
 /**
  * @param {string} text 原始文本
  */
@@ -921,7 +1254,6 @@ function splitSentences(text){
   }
   return res;
 }
-
 // 带超时、异常捕获翻译包装，超时直接返回兜底文本
 async function translateWithTimeout(en){
   return Promise.race([
@@ -937,7 +1269,6 @@ async function translateWithTimeout(en){
     return null;
   });
 }
-
 function switchMode(mode){
     if(listenAutoTimer){clearTimeout(listenAutoTimer);listenAutoTimer=null;}
     if(autoTimer){clearTimeout(autoTimer);autoTimer=null;}
@@ -947,7 +1278,6 @@ function switchMode(mode){
     submitted = false;
     wordInputs = [];
     targetWords = [];
-
     currentMode = mode;
     document.querySelectorAll(".action-btn").forEach(b=>{
         if(b.id!=='btnShuffleMode' && b.id!=='btnReadZh' && b.id!=='btnShowPhonetic') b.classList.remove("active");
@@ -986,26 +1316,21 @@ function loadPasted(){
   closeImportModal();
   startPracticeFromText(text);
 }
-
 async function startPracticeFromText(text){
   if(!text||!text.trim()){alert('没有可练习的内容，请先导入单词或文件！');return;}
   if(autoTimer){clearTimeout(autoTimer);autoTimer=null;}
   if(listenAutoTimer){clearTimeout(listenAutoTimer);listenAutoTimer=null;}
   if(errTipTimer){clearTimeout(errTipTimer);errTipTimer=null;}
   if('speechSynthesis' in window) speechSynthesis.cancel();
-
   submitted = false;
   wordInputs = [];
   targetWords = [];
-
   document.getElementById('correct-bar').innerHTML='';
   document.getElementById('correct-bar').classList.remove('show');
-
   originalSentences = splitSentences(text);
   if(!originalSentences.length){alert('未识别到有效句子，请检查文本格式！');return;}
   applyShuffle();
   curIdx=0;
-
   if(currentMode === "write"){
       switchMode('write');
       return;
@@ -1014,24 +1339,18 @@ async function startPracticeFromText(text){
       await showListenSentence();
   }
 }
-
 function isElementAttached(el){
   if(!el) return false;
   return document.documentElement.contains(el);
 }
-
-//====重大重构：DOM/输入框创建、focus全部放在await之前，保留用户click可信上下文，浏览器允许focus()生效====
 async function showSentence(){
   forceStopRecordIfNeed();
   if(autoTimer){clearTimeout(autoTimer);autoTimer=null;}
   if('speechSynthesis'in window)speechSynthesis.cancel();
   submitted=false;
   wordInputs = [];
-
   const item=sentences[curIdx];
   targetWords=item.en.split(/\s+/);
-
-  //【同步执行，在await之前，处于用户click可信事件链】
   document.getElementById('progress').textContent=`第 ${curIdx+1} / ${sentences.length} 句`;
   document.getElementById('result').classList.remove('show');
   document.getElementById('btn-next').style.display='none';
@@ -1040,10 +1359,8 @@ async function showSentence(){
   errTip.classList.remove('show');errTip.style.background='';errTip.style.borderColor='';errTip.style.color='';
   document.querySelector('.btn-hint-mobile').textContent='显示整句';
   document.getElementById('btn-prev').style.visibility=curIdx===0?'hidden':'visible';
-
   const zhBox=document.getElementById('zh-box');
   zhBox.textContent='中文意思：加载中…';
-
   document.getElementById('en-hint').textContent='整句：'+item.en;
   const wordsBox=document.getElementById('words');
   wordsBox.innerHTML='';
@@ -1059,14 +1376,10 @@ async function showSentence(){
     wordsBox.appendChild(inp);
     wordInputs.push(inp);
   });
-
-  //====focus放在await前面！同步执行，用户click上下文没有丢失！====
   if(wordInputs[0] && isElementAttached(wordInputs[0])){
       wordInputs[0].focus();
       wordInputs[0].setSelectionRange(wordInputs[0].value.length,wordInputs[0].value.length);
   }
-
-  // DOM全部渲染、focus做完，再去做异步网络翻译
   let needTranslate = !item.zh;
   if(!needTranslate){
     zhBox.textContent='中文意思：'+item.zh;
@@ -1081,7 +1394,6 @@ async function showSentence(){
     }
   }
 }
-
 async function showListenSentence(){
     forceStopRecordIfNeed();
     if('speechSynthesis' in window) speechSynthesis.cancel();
@@ -1111,7 +1423,6 @@ async function showListenSentence(){
     }
     playListenSentence();
 }
-
 function playListenSentence(){
     const item = sentences[curIdx];
     if(!('speechSynthesis' in window)) return;
@@ -1143,7 +1454,6 @@ function listenPrev(){
     curIdx -=1;
     showListenSentence();
 }
-
 function clean(s){return s.replace(/[^\w]/g,'');}
 function checkWord(inp,target){
   if(!isElementAttached(inp)) return;
@@ -1189,7 +1499,6 @@ function onWordKeydown(e,inp,idx){
     e.preventDefault();toggleEnHint();
   }
 }
-//全局回车监听
 document.addEventListener('keydown', function(e){
   if(currentMode !== 'write') return;
   if(!submitted) return;
@@ -1283,7 +1592,6 @@ document.getElementById('file-input').addEventListener('change',async (e)=>{
   }catch(err){alert('文件解析失败：'+err.message);return;}
   startPracticeFromText(text);
 });
-
 window.addEventListener('DOMContentLoaded',()=>{
   switchMode('listen');
   loadArticle('unit21');
